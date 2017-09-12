@@ -1,0 +1,13 @@
+! Put user rules line by line in this file.
+! See https://adblockplus.org/en/filter-cheatsheet
+||www.coursera.org
+||stackoverflow.com
+||leetcode.com
+||www.alfredforum.com
+||iconmonstr.com
+||github.com
+||chrome.google.com
+||developer.apple.com
+||idmsa.apple.com
+||mac.softpedia.com
+||packagist.org
