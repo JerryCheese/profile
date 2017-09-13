@@ -1,0 +1,8 @@
+// 将设置放入此文件中以覆盖默认设置
+{
+    "editor.fontSize": 13,
+    "files.autoSave": "onFocusChange",
+    "editor.fontFamily": "Monaco",
+    "window.zoomLevel": 0
+    //"editor.wordWrap": "on"
+}
