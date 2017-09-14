@@ -3,6 +3,8 @@
     "editor.fontSize": 13,
     "files.autoSave": "onFocusChange",
     "editor.fontFamily": "Monaco",
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "editor.renderWhitespace": "all",
+    "files.trimTrailingWhitespace": true
     //"editor.wordWrap": "on"
 }

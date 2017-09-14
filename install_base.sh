@@ -1,4 +1,5 @@
 #!/bin/bash
+BASEPATH=$(pwd)
 
 function install_base() {
     #install brew
@@ -11,7 +12,6 @@ function install_base() {
 
     #install wget
     brew install wget
-
 }
 
 function install_zsh() {
@@ -19,19 +19,21 @@ function install_zsh() {
     if [ ! -e '/bin/zsh' ]; then
         wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
     fi
-    #config
-    cp -f zsh/theme/* ~/.oh-my-zsh/themes/
-    cp -f zsh/zshrc ~/.zshrc
-    source ~/.zshrc
-
     #power line font
     cp -f zsh/Menlo\ Regular\ for\ Powerline.otf ~/Library/Fonts/
     echo 'You should change your iterm font-style to Menlo Regular for Powerline'
 }
 
+function config_zsh() {
+    #config
+    ln -sf $BASEPATH/zsh/theme/* ~/.oh-my-zsh/themes/
+    ln -sf $BASEPATH/zsh/zshrc ~/.zshrc
+    source ~/.zshrc
+}
+
 function config_iterm() {
     echo "configuring for vim..."
-    cp -f iterm/vimrc ~/.vimrc
+    ln -sf $BASEPATH/iterm/vimrc ~/.vimrc
     echo "installing rz sz for iterm..."
     #rz sz
     brew install lrzsz
