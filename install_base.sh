@@ -49,7 +49,9 @@ function config_iterm() {
     echo "\*\*B00000000000000 RunSilentCoprocess /usr/local/bin/iterm2-recv-zmodem.sh"
 }
 
-
+function config_vscode() {
+    ln -nsf $BASEPATH/vscode ~/Library/Application\ Support/Code/User
+}
 
 
 

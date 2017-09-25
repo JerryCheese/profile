@@ -2,4 +2,4 @@
 
 source "install_base.sh"
 
-config_zsh
+config_vscode
