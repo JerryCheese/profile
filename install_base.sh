@@ -2,22 +2,21 @@
 ROOT=$(pwd)
 
 function init_sys() {
-    echo "installing brew..."
     #install brew
-
     if [ ! -e '/usr/local/bin/brew' ]; then
+        echo "installing brew..."
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
 
-    echo "change brew repo to USTC.."
     #change brew repo USTC（中科大镜像）
+    echo "change brew repo to USTC.."
     cd "$(brew --repo)"
     git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
     cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
     git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
 
-    echo "installing dependencies softwares..."
     #install wget lrzsz
+    echo "installing dependencies softwares..."
     brew install wget lrzsz
 
     #link hosts
@@ -27,6 +26,10 @@ function init_sys() {
     #vim
     echo "configuring for vim..."
     ln -sf $ROOT/iterm/vimrc ~/.vimrc
+
+    #rmtrash
+    #mv $ROOT/lib/rmtrash.sh /bin/
+    #chmod +x /bin/rmtrash.sh
 }
 
 function install_zsh() {
