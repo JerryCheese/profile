@@ -4,6 +4,7 @@
 * brew使用[中科大镜像源](https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git)
 * 将`mac/hosts` 软链到 `/etc/hosts`，使用时需要手动解密hosts.enc文件
 * 将`iterm/vimrc` 软链到 `~/.vimrc`
+* 添加`dtt`命令为删除文件到废纸篓（支持“放回原处”）
 
 ### 安装zsh、oh-my-zsh以及配置
 * 将`zsh/zshrc` 软链到 `~/.zsh_rc`

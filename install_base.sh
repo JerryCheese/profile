@@ -27,9 +27,10 @@ function init_sys() {
     echo "configuring for vim..."
     ln -sf $ROOT/iterm/vimrc ~/.vimrc
 
-    #rmtrash
-    #mv $ROOT/lib/rmtrash.sh /bin/
-    #chmod +x /bin/rmtrash.sh
+    #delte to trash, support only one file/dir
+    echo "linking deltotrash..."
+    ln -sf $ROOT/lib/deltotrash.sh /usr/local/bin/deltotrash.sh
+    chmod +x /usr/local/bin/deltotrash.sh
 }
 
 function install_zsh() {
