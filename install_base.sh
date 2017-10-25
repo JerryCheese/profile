@@ -21,7 +21,10 @@ function init_sys() {
 
     #link hosts
     echo "linking hosts..."
-    sudo ln -sf $ROOT/mac/hosts /etc/hosts
+    sudo chown root $ROOT/mac/hosts
+    sudo chgrp whell $ROOT/mac/hosts
+    sudo chmod 644 $ROOT/mac/hosts
+    sudo ln -df $ROOT/mac/hosts /etc/hosts
 
     #vim
     echo "configuring for vim..."
@@ -46,7 +49,9 @@ function install_zsh() {
 
     echo "coping Power Line Font..."
     #power line font
-    cp -f zsh/Menlo\ Regular\ for\ Powerline.otf ~/Library/Fonts/
+    #cp -f zsh/Menlo\ Regular\ for\ Powerline.otf ~/Library/Fonts/
+    cp -f zsh/Monaco\ for\ Powerline.otf ~/Library/Fonts/
+
     echo 'You should change your iterm font-style to Menlo Regular for Powerline'
 
     echo "setting zsh..."
