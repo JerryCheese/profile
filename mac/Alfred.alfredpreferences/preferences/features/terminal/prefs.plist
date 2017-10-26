@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>application</key>
+	<integer>1</integer>
+	<key>custom</key>
+	<string>on alfred_script(q)
+	tell application "iTerm"
+		activate
+		if (count of windows) = 0 then
+            create window with default profile
+        else
+            select first window
+			tell current window
+				create tab with default profile
+			end tell
+		end if
+		#execute command
+		tell first session of current tab of current window
+			 write text q
+		end tell
+	end tell
+end alfred_script</string>
+</dict>
+</plist>
