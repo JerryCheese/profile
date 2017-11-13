@@ -7,7 +7,7 @@
 		<key>1DC6F2E6-A5BA-4529-A2F2-9D561294720A</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>keyword</key>
 			<string>baidu</string>
 			<key>text</key>

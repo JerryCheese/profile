@@ -37,6 +37,7 @@ def aes(text, pwd):
 
 #-------------------------------
 
+# timestamp to date or date to timestamp
 def tt(text):
     if re.compile(r'^\d+$').match(text):
         timestamp = time.localtime(int(text))
@@ -44,5 +45,5 @@ def tt(text):
     elif text == 'now':
         return int(time.time())
     else:
-        timeArray = time.strptime(text, r'%Y-%m-%d %H:%M:%S')
-        return int(time.mktime(timeArray))
+        time_array = time.strptime(text, r'%Y-%m-%d %H:%M:%S')
+        return int(time.mktime(time_array))

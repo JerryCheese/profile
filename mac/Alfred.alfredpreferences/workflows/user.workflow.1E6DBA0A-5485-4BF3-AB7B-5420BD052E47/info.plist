@@ -8,6 +8,19 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>32B4BB46-FB2F-409F-A340-CD2410945E0D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5264C1D4-2B14-46CD-8B2B-1126B1D32307</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>480E72C0-82C5-4E65-8525-B74F3263CCBA</key>
 		<array>
 			<dict>
@@ -21,6 +34,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>5264C1D4-2B14-46CD-8B2B-1126B1D32307</key>
+		<array/>
 		<key>63A958C1-A4AA-497F-B512-F3A36577F913</key>
 		<array/>
 		<key>70C7243B-04EC-447A-AD6F-44B526EE7E2B</key>
@@ -28,6 +43,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>63A958C1-A4AA-497F-B512-F3A36577F913</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7B6585EA-83E4-44BE-A415-C5E3D468E932</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5264C1D4-2B14-46CD-8B2B-1126B1D32307</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -338,17 +366,191 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>5264C1D4-2B14-46CD-8B2B-1126B1D32307</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>118</integer>
+				<key>keyword</key>
+				<string>baidu</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>查询中...</string>
+				<key>script</key>
+				<string>python powerpack.py "baiduCandidate:{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>百度搜索</string>
+				<key>title</key>
+				<string>baidu</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7B6585EA-83E4-44BE-A415-C5E3D468E932</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>118</integer>
+				<key>keyword</key>
+				<string>bing</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>查询中...</string>
+				<key>script</key>
+				<string>python powerpack.py "bingCandidate:{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>必应搜索</string>
+				<key>title</key>
+				<string>bing</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>32B4BB46-FB2F-409F-A340-CD2410945E0D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>118</integer>
+				<key>keyword</key>
+				<string>taobao</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>查询中...</string>
+				<key>script</key>
+				<string>python powerpack.py "taobaoCandidate:{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>淘宝搜索</string>
+				<key>title</key>
+				<string>taobao</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F0DB9927-336F-4023-9665-A0B99EC3E9C0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>32B4BB46-FB2F-409F-A340-CD2410945E0D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>460</integer>
+		</dict>
 		<key>480E72C0-82C5-4E65-8525-B74F3263CCBA</key>
 		<dict>
 			<key>xpos</key>
 			<integer>190</integer>
 			<key>ypos</key>
 			<integer>90</integer>
+		</dict>
+		<key>5264C1D4-2B14-46CD-8B2B-1126B1D32307</key>
+		<dict>
+			<key>xpos</key>
+			<integer>570</integer>
+			<key>ypos</key>
+			<integer>350</integer>
 		</dict>
 		<key>63A958C1-A4AA-497F-B512-F3A36577F913</key>
 		<dict>
@@ -364,6 +566,13 @@
 			<key>ypos</key>
 			<integer>190</integer>
 		</dict>
+		<key>7B6585EA-83E4-44BE-A415-C5E3D468E932</key>
+		<dict>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>430</integer>
+		</dict>
 		<key>8EFBD939-E0DE-4C99-A452-DAB1F9F83E1A</key>
 		<dict>
 			<key>xpos</key>
@@ -377,6 +586,13 @@
 			<integer>190</integer>
 			<key>ypos</key>
 			<integer>270</integer>
+		</dict>
+		<key>F0DB9927-336F-4023-9665-A0B99EC3E9C0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>490</integer>
 		</dict>
 		<key>F169AF40-06FC-4B24-B67A-AA84F2FF1447</key>
 		<dict>
