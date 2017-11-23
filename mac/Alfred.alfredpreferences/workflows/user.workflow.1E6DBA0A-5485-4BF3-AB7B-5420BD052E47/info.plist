@@ -8,6 +8,32 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>02EFF461-02EB-41BD-9037-31C6F823B633</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5264C1D4-2B14-46CD-8B2B-1126B1D32307</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>30F2E298-2F4B-471B-BB4C-7AB92FC31F43</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5264C1D4-2B14-46CD-8B2B-1126B1D32307</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>32B4BB46-FB2F-409F-A340-CD2410945E0D</key>
 		<array>
 			<dict>
@@ -82,6 +108,32 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>63A958C1-A4AA-497F-B512-F3A36577F913</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DB810DD7-BEB6-4DD9-A69F-BC49DE40F5D4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5264C1D4-2B14-46CD-8B2B-1126B1D32307</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F0DB9927-336F-4023-9665-A0B99EC3E9C0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5264C1D4-2B14-46CD-8B2B-1126B1D32307</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -407,7 +459,7 @@
 				<key>queuedelaymode</key>
 				<integer>0</integer>
 				<key>queuemode</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>runningsubtext</key>
 				<string>查询中...</string>
 				<key>script</key>
@@ -454,7 +506,7 @@
 				<key>queuedelaymode</key>
 				<integer>0</integer>
 				<key>queuemode</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>runningsubtext</key>
 				<string>查询中...</string>
 				<key>script</key>
@@ -501,7 +553,7 @@
 				<key>queuedelaymode</key>
 				<integer>0</integer>
 				<key>queuemode</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>runningsubtext</key>
 				<string>查询中...</string>
 				<key>script</key>
@@ -526,11 +578,166 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>118</integer>
+				<key>keyword</key>
+				<string>tcbaidu</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>正在翻译成中文...</string>
+				<key>script</key>
+				<string>python powerpack.py "baiduTranslateChinese:{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>中文翻译</string>
+				<key>title</key>
+				<string>tcbaidu</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>DB810DD7-BEB6-4DD9-A69F-BC49DE40F5D4</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>118</integer>
+				<key>keyword</key>
+				<string>tebaidu</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>正在翻译成英文...</string>
+				<key>script</key>
+				<string>python powerpack.py "baiduTranslateEnglish:{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>英文翻译</string>
+				<key>title</key>
+				<string>tebaidu</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>02EFF461-02EB-41BD-9037-31C6F823B633</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>118</integer>
+				<key>keyword</key>
+				<string>tjbaidu</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>正在翻译成日文...</string>
+				<key>script</key>
+				<string>python powerpack.py "baiduTranslateJapanese:{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>日文翻译</string>
+				<key>title</key>
+				<string>tjbaidu</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>30F2E298-2F4B-471B-BB4C-7AB92FC31F43</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>02EFF461-02EB-41BD-9037-31C6F823B633</key>
+		<dict>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>700</integer>
+		</dict>
+		<key>30F2E298-2F4B-471B-BB4C-7AB92FC31F43</key>
+		<dict>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>730</integer>
+		</dict>
 		<key>32B4BB46-FB2F-409F-A340-CD2410945E0D</key>
 		<dict>
 			<key>xpos</key>
@@ -586,6 +793,13 @@
 			<integer>190</integer>
 			<key>ypos</key>
 			<integer>270</integer>
+		</dict>
+		<key>DB810DD7-BEB6-4DD9-A69F-BC49DE40F5D4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>670</integer>
 		</dict>
 		<key>F0DB9927-336F-4023-9665-A0B99EC3E9C0</key>
 		<dict>
