@@ -7,10 +7,8 @@
 # 
 # Format:
 # tt
-import hashlib
+import hashlib, re, time, urllib, json
 import base64 as b6
-import re
-import time
 
 
 # Hash & encode/decode :
@@ -25,10 +23,20 @@ def sha1(text):
     return m.hexdigest()
 
 def base64(text):
-    return b6.b64encode(text)
+    encode = b6.b64encode(text)
+    decode = ''
+    if len(text) % 4 == 0 and re.compile(r'^[A-Z0-9a-z+/]+=*$').match(text):
+        try:
+            decode = b6.b64decode(text)
+        except :
+            decode = ''
+    return [encode, decode]
 
-def base64d(text):
-    return b6.b64decode(text)
+def urlcode(text):
+    encode = urllib.quote(text)
+    decode = urllib.unquote(text)
+    return [encode, decode]
+
 #-------------------------------
 # Encrypt/decrypt :
 

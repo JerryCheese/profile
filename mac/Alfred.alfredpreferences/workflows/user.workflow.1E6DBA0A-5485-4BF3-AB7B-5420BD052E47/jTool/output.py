@@ -47,10 +47,9 @@ def responsePowerpack(res, argv):
     items = []
     data = []
     if isinstance(res, (list, tuple)):
-        for e in res:
-            data.append(e)
-    else :
         data = res
+    else :
+        data = [res]
     
     items = outputFormat(argv, data)
 
@@ -64,10 +63,17 @@ def outputFormat(argv, data):
     ret = candidatesFormat(argv, data)
     if ret == False:
         ret = translatesFormat(argv, data)
-
     if ret == False:
-        ret = data
-        # try other
+        ret = []
+        for e in data:
+            ret.append({
+                'type' : 'default',
+                'title' : e,
+                'subtitle': '',
+                'autocomplete' : e,
+                'arg': e
+            })
+        
 
 
     return ret

@@ -142,19 +142,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>F169AF40-06FC-4B24-B67A-AA84F2FF1447</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>63A958C1-A4AA-497F-B512-F3A36577F913</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 	</dict>
 	<key>createdby</key>
 	<string></string>
@@ -301,7 +288,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string></string>
+				<string>计算中...</string>
 				<key>script</key>
 				<string>python powerpack.py "base64:{query}"</string>
 				<key>scriptargtype</key>
@@ -309,7 +296,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>计算base64的编码值</string>
+				<string>base64编码/解码</string>
 				<key>title</key>
 				<string>base64</string>
 				<key>type</key>
@@ -321,53 +308,6 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>70C7243B-04EC-447A-AD6F-44B526EE7E2B</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>118</integer>
-				<key>keyword</key>
-				<string>base64d</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<false/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>python powerpack.py "base64d:{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>解码base64</string>
-				<key>title</key>
-				<string>base64d</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>F169AF40-06FC-4B24-B67A-AA84F2FF1447</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -397,7 +337,25 @@
 				<key>runningsubtext</key>
 				<string>计算中...</string>
 				<key>script</key>
-				<string>python powerpack.py "tt:{query}"</string>
+				<string>$query =  '{query}';
+date_default_timezone_set('PRC');
+$item = array(
+    'type'  =&gt; 'default',
+    'title' =&gt; '',
+    'subtitle' =&gt; '',
+    'autocomplete' =&gt; '',
+    'arg'=&gt; ''
+);
+if (preg_match('/^[0-9]+$/', $query) &gt; 0) {
+    $data = date('Y-m-d H:i:s', $query);
+} else {
+	$data = strtotime($query);
+	$item['subtitle'] = date('Y-m-d H:i:s', $data);
+}
+
+$item['title'] = $data;
+$item['arg'] = $data;
+echo json_encode(array('items' =&gt; array($item)));</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -407,7 +365,7 @@
 				<key>title</key>
 				<string>tt</string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -415,6 +373,53 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>A97794E0-6483-4D30-8992-91EC28651518</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>118</integer>
+				<key>keyword</key>
+				<string>urlcode</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>计算中...</string>
+				<key>script</key>
+				<string>python powerpack.py "urlcode:{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>URL编码/解码</string>
+				<key>title</key>
+				<string>urlcode</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D6F8F77A-26C8-4033-B612-CE2A63CDEF14</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -436,147 +441,6 @@
 			<string>5264C1D4-2B14-46CD-8B2B-1126B1D32307</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>118</integer>
-				<key>keyword</key>
-				<string>baidu</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<false/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>2</integer>
-				<key>runningsubtext</key>
-				<string>查询中...</string>
-				<key>script</key>
-				<string>python powerpack.py "baiduCandidate:{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>百度搜索</string>
-				<key>title</key>
-				<string>baidu</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>7B6585EA-83E4-44BE-A415-C5E3D468E932</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>118</integer>
-				<key>keyword</key>
-				<string>bing</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<false/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>2</integer>
-				<key>runningsubtext</key>
-				<string>查询中...</string>
-				<key>script</key>
-				<string>python powerpack.py "bingCandidate:{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>必应搜索</string>
-				<key>title</key>
-				<string>bing</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>32B4BB46-FB2F-409F-A340-CD2410945E0D</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>118</integer>
-				<key>keyword</key>
-				<string>taobao</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<false/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>2</integer>
-				<key>runningsubtext</key>
-				<string>查询中...</string>
-				<key>script</key>
-				<string>python powerpack.py "taobaoCandidate:{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>淘宝搜索</string>
-				<key>title</key>
-				<string>taobao</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>F0DB9927-336F-4023-9665-A0B99EC3E9C0</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -622,6 +486,53 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>DB810DD7-BEB6-4DD9-A69F-BC49DE40F5D4</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>118</integer>
+				<key>keyword</key>
+				<string>baidu</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>查询中...</string>
+				<key>script</key>
+				<string>python powerpack.py "baiduCandidate:{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>百度搜索</string>
+				<key>title</key>
+				<string>baidu</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7B6585EA-83E4-44BE-A415-C5E3D468E932</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -686,6 +597,53 @@
 				<key>escaping</key>
 				<integer>118</integer>
 				<key>keyword</key>
+				<string>bing</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>查询中...</string>
+				<key>script</key>
+				<string>python powerpack.py "bingCandidate:{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>必应搜索</string>
+				<key>title</key>
+				<string>bing</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>32B4BB46-FB2F-409F-A340-CD2410945E0D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>118</integer>
+				<key>keyword</key>
 				<string>tjbaidu</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
@@ -719,6 +677,53 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>118</integer>
+				<key>keyword</key>
+				<string>taobao</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>查询中...</string>
+				<key>script</key>
+				<string>python powerpack.py "taobaoCandidate:{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>淘宝搜索</string>
+				<key>title</key>
+				<string>taobao</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F0DB9927-336F-4023-9665-A0B99EC3E9C0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -727,23 +732,23 @@
 		<key>02EFF461-02EB-41BD-9037-31C6F823B633</key>
 		<dict>
 			<key>xpos</key>
-			<integer>220</integer>
+			<integer>550</integer>
 			<key>ypos</key>
-			<integer>700</integer>
+			<integer>640</integer>
 		</dict>
 		<key>30F2E298-2F4B-471B-BB4C-7AB92FC31F43</key>
 		<dict>
 			<key>xpos</key>
-			<integer>220</integer>
+			<integer>550</integer>
 			<key>ypos</key>
-			<integer>730</integer>
+			<integer>670</integer>
 		</dict>
 		<key>32B4BB46-FB2F-409F-A340-CD2410945E0D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>220</integer>
+			<integer>270</integer>
 			<key>ypos</key>
-			<integer>460</integer>
+			<integer>640</integer>
 		</dict>
 		<key>480E72C0-82C5-4E65-8525-B74F3263CCBA</key>
 		<dict>
@@ -755,7 +760,7 @@
 		<key>5264C1D4-2B14-46CD-8B2B-1126B1D32307</key>
 		<dict>
 			<key>xpos</key>
-			<integer>570</integer>
+			<integer>520</integer>
 			<key>ypos</key>
 			<integer>350</integer>
 		</dict>
@@ -771,49 +776,49 @@
 			<key>xpos</key>
 			<integer>190</integer>
 			<key>ypos</key>
-			<integer>190</integer>
+			<integer>150</integer>
 		</dict>
 		<key>7B6585EA-83E4-44BE-A415-C5E3D468E932</key>
 		<dict>
 			<key>xpos</key>
-			<integer>220</integer>
+			<integer>270</integer>
 			<key>ypos</key>
-			<integer>430</integer>
+			<integer>610</integer>
 		</dict>
 		<key>8EFBD939-E0DE-4C99-A452-DAB1F9F83E1A</key>
 		<dict>
 			<key>xpos</key>
 			<integer>190</integer>
 			<key>ypos</key>
-			<integer>140</integer>
+			<integer>120</integer>
 		</dict>
 		<key>A97794E0-6483-4D30-8992-91EC28651518</key>
 		<dict>
 			<key>xpos</key>
 			<integer>190</integer>
 			<key>ypos</key>
-			<integer>270</integer>
+			<integer>180</integer>
 		</dict>
-		<key>DB810DD7-BEB6-4DD9-A69F-BC49DE40F5D4</key>
-		<dict>
-			<key>xpos</key>
-			<integer>220</integer>
-			<key>ypos</key>
-			<integer>670</integer>
-		</dict>
-		<key>F0DB9927-336F-4023-9665-A0B99EC3E9C0</key>
-		<dict>
-			<key>xpos</key>
-			<integer>220</integer>
-			<key>ypos</key>
-			<integer>490</integer>
-		</dict>
-		<key>F169AF40-06FC-4B24-B67A-AA84F2FF1447</key>
+		<key>D6F8F77A-26C8-4033-B612-CE2A63CDEF14</key>
 		<dict>
 			<key>xpos</key>
 			<integer>190</integer>
 			<key>ypos</key>
-			<integer>240</integer>
+			<integer>210</integer>
+		</dict>
+		<key>DB810DD7-BEB6-4DD9-A69F-BC49DE40F5D4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>550</integer>
+			<key>ypos</key>
+			<integer>610</integer>
+		</dict>
+		<key>F0DB9927-336F-4023-9665-A0B99EC3E9C0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>270</integer>
+			<key>ypos</key>
+			<integer>670</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
