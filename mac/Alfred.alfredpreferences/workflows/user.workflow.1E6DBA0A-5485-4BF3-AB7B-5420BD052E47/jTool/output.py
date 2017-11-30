@@ -45,11 +45,7 @@ def error(msg = 'program occured a error'):
 
 def responsePowerpack(res, argv):
     items = []
-    data = []
-    if isinstance(res, (list, tuple)):
-        data = res
-    else :
-        data = [res]
+    data = res
     
     items = outputFormat(argv, data)
 
