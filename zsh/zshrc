@@ -83,3 +83,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# for docker ctl
+nginx_container="nginx1"
+
+alias nginx="docker exec -it $nginx_container nginx"
+alias sc='~/docker-architecture/scripts/short-cmd.sh "`cat ~/.zsh_history|tail -n 1`"'
