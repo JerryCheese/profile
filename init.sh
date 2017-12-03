@@ -2,4 +2,5 @@
 
 source "install_base.sh"
 
-config_vscode
+init_sys
+

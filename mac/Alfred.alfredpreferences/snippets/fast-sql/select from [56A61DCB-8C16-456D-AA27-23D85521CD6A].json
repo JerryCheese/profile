@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "select * from {cursor};",
+    "uid" : "56A61DCB-8C16-456D-AA27-23D85521CD6A",
+    "name" : "select * from",
+    "keyword" : "sel"
+  }
+}
