@@ -104,6 +104,16 @@
 	<dict>
 		<key>installed</key>
 		<dict>
+			<key>http://kapeli.com/feeds/JavaScript.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2017-12-29T05:35:16Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/NodeJS.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2017-12-29T05:30:33Z</date>
+			</dict>
 			<key>http://kapeli.com/feeds/PHP.xml</key>
 			<dict>
 				<key>date</key>

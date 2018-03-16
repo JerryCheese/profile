@@ -85,5 +85,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # for docker ctl
-
 alias dtt=/usr/local/bin/deltotrash.sh
+
+
+
+# for dev
+alias redis-cli='sc -c redis redis-cli'
+alias mysql='sc -c mysql mysql'

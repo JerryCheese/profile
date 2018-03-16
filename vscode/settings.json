@@ -1,9 +1,20 @@
 // 将设置放入此文件中以覆盖默认设置
 {
-    "editor.fontSize": 15,
+    "editor.fontSize": 13,
     "files.autoSave": "onFocusChange",
     "editor.fontFamily": "Monaco",
     "window.zoomLevel": 0,
     "editor.renderWhitespace": "all",
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "element-helper.version": "2.2",
+    "emmet.includeLanguages": {
+        "blade": "html"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "php.executablePath": "/usr/bin/php",
+    "php.suggest.basic": false,
+    "workbench.colorTheme": "Visual Studio Dark"
 }
