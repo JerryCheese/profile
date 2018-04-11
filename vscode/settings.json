@@ -9,7 +9,7 @@
     "editor.quickSuggestions": {
         "strings": true
     },
-    "element-helper.version": "2.2",
+    "element-helper.version": "2.3",
     "emmet.includeLanguages": {
         "blade": "html"
     },

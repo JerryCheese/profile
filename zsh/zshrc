@@ -84,6 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export PATH=/usr/local/php5/bin:/usr/local/php5/sbin:$PATH
 # for docker ctl
 alias dtt=/usr/local/bin/deltotrash.sh
 
@@ -92,3 +93,6 @@ alias dtt=/usr/local/bin/deltotrash.sh
 # for dev
 alias redis-cli='sc -c redis redis-cli'
 alias mysql='sc -c mysql mysql'
+export PATH="/usr/local/sbin:$PATH"
+eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
