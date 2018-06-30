@@ -87,5 +87,15 @@ source $ZSH/oh-my-zsh.sh
 # for docker ctl
 nginx_container="nginx1"
 
+export root_mysql=" -h127.0.0.1 -p"
+
 alias nginx="docker exec -it $nginx_container nginx"
-alias sc='~/docker-architecture/scripts/short-cmd.sh "`cat ~/.zsh_history|tail -n 1`"'
+alias mysql="sc mysql"
+alias php="sc php"
+alias composer="sc -c php composer"
+alias redis-cli="sc -c redis redis-cli"
+
+alias docker_php="sc -i php"
+alias docker_mysql="sc -i mysql"
+
+alias mysql_root="sc mysql -h127.0.0.1 -uroot -p"
