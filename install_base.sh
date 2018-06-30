@@ -44,22 +44,22 @@ function install_zsh() {
 
     echo "installing oh-my-zsh..."
     #install oh-my-zsh
-    if [ ! -e '/bin/zsh' ]; then
-        wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
-    fi
+    wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 
-    echo "coping Power Line Font..."
+    #echo "coping Power Line Font..."
     #power line font
     #cp -f zsh/Menlo\ Regular\ for\ Powerline.otf ~/Library/Fonts/
     #cp -f zsh/Monaco\ for\ Powerline.otf ~/Library/Fonts/
 
-    echo 'You should change your iterm font-style to Menlo Regular for Powerline'
+    #echo 'You should change your iterm font-style to Menlo Regular for Powerline'
 
     echo "setting zsh..."
     #config
     ln -sf $ROOT/zsh/theme/* ~/.oh-my-zsh/themes/
     ln -sf $ROOT/zsh/zshrc ~/.zshrc
     source ~/.zshrc
+
+    echo "You may need: chsh, and enter '/bin/zsh'"
 }
 
 function config_iterm() {
