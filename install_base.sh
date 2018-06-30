@@ -39,7 +39,8 @@ function init_sys() {
 function install_zsh() {
     echo "installing zsh..."
     #install zsh
-    brew install zsh
+    #brew install zsh
+    yum install -y zsh
 
     echo "installing oh-my-zsh..."
     #install oh-my-zsh
@@ -50,7 +51,7 @@ function install_zsh() {
     echo "coping Power Line Font..."
     #power line font
     #cp -f zsh/Menlo\ Regular\ for\ Powerline.otf ~/Library/Fonts/
-    cp -f zsh/Monaco\ for\ Powerline.otf ~/Library/Fonts/
+    #cp -f zsh/Monaco\ for\ Powerline.otf ~/Library/Fonts/
 
     echo 'You should change your iterm font-style to Menlo Regular for Powerline'
 
