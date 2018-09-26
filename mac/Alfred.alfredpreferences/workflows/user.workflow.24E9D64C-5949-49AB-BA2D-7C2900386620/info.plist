@@ -1,236 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>bundleid</key>
-	<string>qiniu-image-tool</string>
-	<key>category</key>
-	<string>Tools</string>
-	<key>connections</key>
-	<dict>
-		<key>5723CD39-D3E7-49AD-9C91-31528BDA041F</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>7FE3DBF1-0D88-4077-BFD8-2E2FEB8527BC</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>7FE3DBF1-0D88-4077-BFD8-2E2FEB8527BC</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>3F126B94-9354-491C-B7CC-B6DC0AEE0893</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>97535B5D-516D-47F4-B6C6-A84407563988</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-	</dict>
-	<key>createdby</key>
-	<string>jverson</string>
-	<key>description</key>
-	<string>upload image to qiniu and get the markdown format url in clipboard</string>
-	<key>disabled</key>
-	<false/>
-	<key>name</key>
-	<string>Qiniu</string>
-	<key>objects</key>
-	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>3F126B94-9354-491C-B7CC-B6DC0AEE0893</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>-- config start
-property bucket : (system attribute "bucket")
-property bucketDomain : (system attribute "bucketDomain")
-property AccessKey : (system attribute "AccessKey")
-property SecretKey : (system attribute "SecretKey")
--- config end
-
--- md5(date) as file nameset fileName to do shell script "date \"+%Y%m%d%H%M%S\" | md5"-- see if clipboard is a fileset filePath to ""try	set clipPath to the clipboard as «class furl»	set filePath to clipPath as alias	-- like "/Users/jverson/Pictures/igarss/IMG_20140720_221838.jpg"	set filePath to quoted form of POSIX path of filePath	set filePath to second item of my theSplit(filePath, "'")	set tempArray to my theSplit(filePath, ".")	-- like "jpg" or "png" or "gif" or "mp4"	set fileType to last item of tempArrayend tryif filePath is not "" then	set fileName to fileName &amp; "." &amp; fileType	set markdownUrl to my upload(fileName, filePath, fileType)	return markdownUrl --endend if-- see if clipboard is image dataset jpegDATA to ""try	set jpegDATA to the clipboard as JPEG pictureend tryif jpegDATA is not "" then	set tempPath to "/tmp/"	set fileName to fileName &amp; ".jpg"	set filePath to tempPath &amp; fileName	set theFile to open for access filePath with write permission	write jpegDATA to theFile	close access theFile	set markdownUrl to my upload(fileName, filePath, "jpg")
-    -- delete temp file
-    do shell script "rm " &amp; filePath	return markdownUrlend ifbeep 1display dialog ¬	"No file or image data found on the clipboard." with icon ¬	note buttons {"Whatever"} default button 1
-return-- string split function-- ref: http://erikslab.com/2007/08/31/applescript-how-to-split-a-string/on theSplit(theString, theDelimiter)	-- save delimiters to restore old settings	set oldDelimiters to AppleScript's text item delimiters	-- set delimiters to delimiter to be used	set AppleScript's text item delimiters to theDelimiter	-- create the array	set theArray to every text item of theString	-- restore the old setting	set AppleScript's text item delimiters to oldDelimiters	-- return the result	return theArrayend theSplit-- upload image to qiniuon upload(fileName, filePath, fileType)
-    -- compress image todo..
-
-    -- qiniu account set
-    set account_commond to "/usr/local/bin/qshell account " &amp; AccessKey &amp; " " &amp; SecretKey
-    do shell script account_commond
-    -- upload to qiniu	set upload_command to "/usr/local/bin/qshell fput " &amp; bucket &amp; " " &amp; fileName &amp; " " &amp; filePath	do shell script upload_command
-    -- strcat url
-    set resourceUrl to bucketDomain &amp; fileName
-    if (fileType is "png") or (fileType is "jpg") or (fileType is "gif") or (fileType is "bmp") or (fileType is "jpeg") then	    set markdownUrl to "![](" &amp; resourceUrl &amp; ")"	    return markdownUrl
-    else
-        return resourceUrl
-    end if
-end upload
-
--- ref:https://discussions.apple.com/thread/2379870?start=0&amp;tstart=0</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>7FE3DBF1-0D88-4077-BFD8-2E2FEB8527BC</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>9</integer>
-				<key>hotmod</key>
-				<integer>1572864</integer>
-				<key>hotstring</key>
-				<string>V</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>5723CD39-D3E7-49AD-9C91-31528BDA041F</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>the resource url already in your clipboard：）</string>
-				<key>title</key>
-				<string>congratulations😊</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>97535B5D-516D-47F4-B6C6-A84407563988</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-	</array>
-	<key>readme</key>
-	<string>significantly simplify the image-paste while writing markdown, a faster way to upload image or screenshot to qiniu and get back the markdowm format url.
-
-to use this workflow:
-1. have qshell installed
-2. config environment variables
-3. define your hotkey and related apps(optional)
-4. enjoy it</string>
-	<key>uidata</key>
-	<dict>
-		<key>3F126B94-9354-491C-B7CC-B6DC0AEE0893</key>
-		<dict>
-			<key>xpos</key>
-			<integer>610</integer>
-			<key>ypos</key>
-			<integer>30</integer>
-		</dict>
-		<key>5723CD39-D3E7-49AD-9C91-31528BDA041F</key>
-		<dict>
-			<key>xpos</key>
-			<integer>70</integer>
-			<key>ypos</key>
-			<integer>110</integer>
-		</dict>
-		<key>7FE3DBF1-0D88-4077-BFD8-2E2FEB8527BC</key>
-		<dict>
-			<key>xpos</key>
-			<integer>330</integer>
-			<key>ypos</key>
-			<integer>110</integer>
-		</dict>
-		<key>97535B5D-516D-47F4-B6C6-A84407563988</key>
-		<dict>
-			<key>xpos</key>
-			<integer>610</integer>
-			<key>ypos</key>
-			<integer>220</integer>
-		</dict>
-	</dict>
-	<key>variables</key>
-	<dict>
-		<key>AccessKey</key>
-		<string>lcnnHmbP72tDeTXM8Z6fTF2K784kcrWk-qiFyRhf</string>
-		<key>SecretKey</key>
-		<string>vhYQl5lOZThMMbGOFtn-N5MQ5v5eOly5BG40Wkd_</string>
-		<key>bucket</key>
-		<string> jerry-pic</string>
-		<key>bucketDomain</key>
-		<string>http://os9coobhw.bkt.clouddn.com/</string>
-	</dict>
-	<key>variablesdontexport</key>
-	<array>
-		<string>AccessKey</string>
-		<string>SecretKey</string>
-	</array>
-	<key>version</key>
-	<string>1.0</string>
-	<key>webaddress</key>
-	<string>https://github.com/jiwenxing/qiniu-image-tool</string>
-</dict>
-</plist>
