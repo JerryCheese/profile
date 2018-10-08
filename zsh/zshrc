@@ -96,3 +96,6 @@ source $ZSH/oh-my-zsh.sh
 #export PATH="/usr/local/sbin:$PATH"
 #eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
+
+# added by Anaconda3 installer
+export PATH="/home/jerry/anaconda3/bin:$PATH"
