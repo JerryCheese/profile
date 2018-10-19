@@ -1,8 +1,0 @@
-{
-  "alfredsnippet" : {
-    "snippet" : "show create table {cursor};",
-    "uid" : "DBA735AA-370B-4327-B7D1-E922CCC66088",
-    "name" : "show create table",
-    "keyword" : "sct"
-  }
-}

@@ -40,11 +40,11 @@ function install_zsh() {
     echo "installing zsh..."
     #install zsh
     #brew install zsh
-    yum install -y zsh
+    sudo yum install -y zsh
 
     echo "installing oh-my-zsh..."
     #install oh-my-zsh
-    wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+    sudo wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sudo sh
 
     #echo "coping Power Line Font..."
     #power line font
