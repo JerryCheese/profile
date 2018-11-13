@@ -16,6 +16,5 @@
     "emmet.triggerExpansionOnTab": true,
     "php.executablePath": "/usr/bin/php",
     "php.suggest.basic": false,
-    "workbench.colorTheme": "Visual Studio Dark",
     "explorer.confirmDragAndDrop": false
 }
