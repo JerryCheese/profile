@@ -16,5 +16,8 @@
     "emmet.triggerExpansionOnTab": true,
     "php.executablePath": "/usr/bin/php",
     "php.suggest.basic": false,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "[vue]": {
+        
+    }
 }
