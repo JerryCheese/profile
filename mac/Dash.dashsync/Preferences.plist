@@ -89,7 +89,33 @@
 	<key>DHUserRepo</key>
 	<dict>
 		<key>installed</key>
-		<dict/>
+		<dict>
+			<key>PyTorch</key>
+			<dict>
+				<key>date</key>
+				<date>2019-03-23T11:22:50Z</date>
+				<key>entry</key>
+				<dict>
+					<key>aliases</key>
+					<array>
+						<string>PyTorch</string>
+						<string>Deep Learning</string>
+						<string>Machine Learning</string>
+						<string>Neural Networks</string>
+					</array>
+					<key>authorLinkHref</key>
+					<string>https://github.com/Kapeli/Dash-User-Contributions/tree/master/docsets/PyTorch#readme</string>
+					<key>authorLinkText</key>
+					<string>Aziz Alto</string>
+					<key>name</key>
+					<string>PyTorch</string>
+					<key>platform</key>
+					<string>usercontribPyTorch</string>
+					<key>uniqueIdentifier</key>
+					<string>PyTorch</string>
+				</dict>
+			</dict>
+		</dict>
 		<key>uninstalled</key>
 		<dict/>
 	</dict>
@@ -109,20 +135,45 @@
 				<key>date</key>
 				<date>2017-12-29T05:35:16Z</date>
 			</dict>
+			<key>http://kapeli.com/feeds/MatPlotLib.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2018-05-10T16:57:06Z</date>
+			</dict>
 			<key>http://kapeli.com/feeds/NodeJS.xml</key>
 			<dict>
 				<key>date</key>
 				<date>2017-12-29T05:30:33Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/NumPy.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2018-05-10T16:53:10Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/PHP.xml</key>
 			<dict>
 				<key>date</key>
 				<date>2017-10-26T14:06:44Z</date>
 			</dict>
+			<key>http://kapeli.com/feeds/Pandas.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2019-03-23T11:23:12Z</date>
+			</dict>
 			<key>http://kapeli.com/feeds/Python_2.xml</key>
 			<dict>
 				<key>date</key>
 				<date>2017-10-26T13:46:24Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/Python_3.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2018-05-09T17:40:04Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/SciPy.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2019-03-23T11:24:30Z</date>
 			</dict>
 		</dict>
 		<key>uninstalled</key>

@@ -221,7 +221,7 @@ to use this workflow:
 		<key>bucket</key>
 		<string> jerry-pic</string>
 		<key>bucketDomain</key>
-		<string>http://os9coobhw.bkt.clouddn.com/</string>
+		<string>http://static.hijerry.cn/</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>

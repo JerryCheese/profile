@@ -16,5 +16,6 @@
     "emmet.triggerExpansionOnTab": true,
     "php.executablePath": "/usr/bin/php",
     "php.suggest.basic": false,
-    "workbench.colorTheme": "Visual Studio Dark"
+    "workbench.colorTheme": "Visual Studio Dark",
+    "python.pythonPath": "/anaconda3/bin/python"
 }
